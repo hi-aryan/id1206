@@ -65,19 +65,19 @@ int main(int argc, char *argv[])
      printf("Parallel Sum = %f, time = %.6f \n", sum_parallel, time_parallel);   // CHANGED [11]
 
      /*free up resources properly */
-     free(array);                                          // ADDED [15]
-     free(workers);                                        // ADDED [15]
-     free(partial);                                        // ADDED [15]
-     return 0;                                             // ADDED [15]
+     free(array);     
+     free(workers);           
+     free(partial);                     
+     return 0;     
 }
 
 void *thread_func(void *arg) {                             // CHANGED [6]
      /* Assign each thread an id so that they are unique in range [0, num_thread -1 ] */
-     long my_id = (long)arg;                               // CHANGED [13]
+     long my_id = (long)arg;             
 
-     int chunk = SIZE / num_threads;                       // ADDED [16]
-     int start = my_id * chunk;                            // ADDED [16]
-     int end = (my_id == num_threads - 1) ? SIZE : start + chunk;   // ADDED [16]
+     int chunk = SIZE / num_threads;     
+     int start = my_id * chunk;          
+     int end = (my_id == num_threads - 1) ? SIZE : start + chunk; 
 
      /* Perform Partial Parallel Sum Here */
      double my_sum = 0.0;                                  // CHANGED [8]
