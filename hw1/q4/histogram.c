@@ -47,7 +47,7 @@ int main(int argc, char *argv[]) {
     /* serial histogram */
     int *hist_serial = calloc(bins, sizeof(int));
     double t = get_time_now();
-    for (int i = 0; i < size; i++)
+    for (int i = 0; i < size; i++) // serial's entire work
         hist_serial[bin_of(array[i])]++;
     double time_serial = get_time_now() - t;
     printf("Serial histogram:\n");
