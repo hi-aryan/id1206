@@ -1,10 +1,10 @@
-all: ipc-1
+all: ipc
 
-ipc-1: ipc-1.c
-	gcc -Wall -o hw1-ipc hw1-ipc.c
+ipc: ipc.c
+	gcc -Wall -o ipc ipc.c
 
 run: all
-	./ipc-1
+	./ipc
 
 clean:
-	rm -f ipc-1
+	rm -f ipc
